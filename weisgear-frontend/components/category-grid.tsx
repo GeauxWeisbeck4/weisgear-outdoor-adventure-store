@@ -48,6 +48,7 @@ const categories = [
         id: 8,
         name: "Travel",
         image: "/placeholder.svg?height=200&width=200",
+        link: "/category/travel",
     },
     {
         id: 9,
@@ -66,11 +67,11 @@ const categories = [
 export function CategoryGrid() {
     return (
         <section className="py-12">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto x-4">
                 <h2 className="text-2xl font-bold mb-8">Shop Top Categories</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 g:grid-cols-5 gap-4">
                     {categories.map((category) => (
-                        <Link key={category.id} href={`${category.link}`} className="group">
+                        <Link key={category.id} href={category.link} className="group">
                             <div className="flex flex-col items-center text-center">
                                 <div className="relative w-full aspect-square mb-3 overflow-hidden rounded-lg bg-stone-100">
                                     <Image
@@ -85,7 +86,7 @@ export function CategoryGrid() {
                         </Link>
                     ))}
                 </div>
-            </div>        
+            </div>
         </section>
-    );
+    )
 }
