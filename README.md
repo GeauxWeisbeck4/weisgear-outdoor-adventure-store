@@ -17,7 +17,7 @@ If this sounds like something you can dig, feel free to contribute in any way. I
   - TailwindCSS
   - Node.js
   - Typescript
- 
+
 ## Other Software and Tools Used
 
 - Penpot
@@ -26,13 +26,12 @@ If this sounds like something you can dig, feel free to contribute in any way. I
 - Trello
 - VSCode
 
-
 ### Frontend To Do/Checklist
 
 - [ ] Setup unit testing for this project
 - [ ] Setup automated testing
-- [ ] Set up SEO 
-- [ ] `tailwind.config.ts` file 
+- [ ] Set up SEO
+- [x] `tailwind.config.ts` file
 - [ ] Build components
 - [ ] Write documentation
 - [ ] Create UI design in Penpot
@@ -40,8 +39,8 @@ If this sounds like something you can dig, feel free to contribute in any way. I
 
 ## WeisMind Creative Family
 
-WeisGear is a part of the WeisMind Creative family of brands that I have created. WeisMind is my personal brand that I have used since 2016 in various projects and businesses, like WeisMind Consulting and the WeisMind Podcast. I am renewing my efforts at bringing my brand back to life by launching the WeisMind Weekly Newsletter and the WeisMind website. WeisMind Creative is the parent brand that I use to organize my various products and services under one unique umbrella. 
+WeisGear is a part of the WeisMind Creative family of brands that I have created. WeisMind is my personal brand that I have used since 2016 in various projects and businesses, like WeisMind Consulting and the WeisMind Podcast. I am renewing my efforts at bringing my brand back to life by launching the WeisMind Weekly Newsletter and the WeisMind website. WeisMind Creative is the parent brand that I use to organize my various products and services under one unique umbrella.
 
 [You can learn more about WeisMind by visiting my digital garden for now](https://geauxweisbeck4.dev). I am currently developing the WeisMind Website, so most of the information you can find will be on that website.
 
-Check out the WeisMind Newsletter on Substack here. 
+Check out the WeisMind Newsletter on Substack here.

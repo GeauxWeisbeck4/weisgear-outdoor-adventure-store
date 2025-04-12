@@ -1,102 +1,260 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Search, ShoppingCart, User, Menu } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { HeroCarousel } from "@/components/hero-carousel";
+import { CategoryGrid } from "@/components/category-grid";
+import { FeaturedBrands } from "@/components/featured-brands";
+import { StoryCards } from "@/components/story-cards";
+import { ProductGrid } from "@/components/product-grid";
+import { SeasonalPromotion } from "@/components/seasonal-promotion";
+import { ValueProps } from "@/components/value-props";
+import { Newsletter } from "@/components/newsletter";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex min-h-screen flex-col">
+      {/* Top Navigation */}
+      <header className="border-b">
+      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-2 md:hidden">
+            <Button variant="ghost" size="icon" aria-label="Menu">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <Link href="/" className="flex items-center">
+            <Image src="/logo.png" alt="WeisGear" width={120} height={40} className="h-10 w-auto" />
+          </Link>
+
+          <div className="hidden md:flex flex-1 max-w-md mx-4">
+            <div className="relative w-full">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input type="search" placeholder="Search for gear & adventures..." className="pl-10 w-full bg-muted/40" />
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" aria-label="Search" className="md:hidden">
+              <Search className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" aria-label="Account">
+              <User className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" aria-label="Cart" className="relative">
+              <ShoppingCart className="h-5 w-5" />
+              <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">3</Badge>
+            </Button>
+          </div>
         </div>
+
+        {/* Main Navigation */}
+        <nav className="hidden md:block bg-[#2E4333] text-white">
+          <div className="container mx-auto px-4">
+            <ul className="flex space-x-8">
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/camp-hike">Camp & Hike</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/climb">Climb</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/cycle">Cycle</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/water">Water</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/run">Run</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/fitness">Fitness</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/snow">Snow</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/category/travel">Travel</Link>
+              </li>
+              <li className="py-3 hover:text-amber-300 transition-colors">
+                <Link href="/deals">Deals</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main className="flex-1">
+        {/* Hero Carousel */}
+        <HeroCarousel />
+
+        {/* Sale Promotion */}
+        <section className="py-8 bg-amber-100">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-4">Spring Adventure Sale!</h2>
+            <p className="text-xl mb-6">Up to 50% off select outdoor gear</p>
+            <Button className="bg-[#2E4333] hover:bg-[#1A2A1E] text-white">Shop Now</Button>
+          </div>
+        </section>
+
+        {/* Featured Brands */}
+        <FeaturedBrands />
+
+        {/* Category Grid */}
+        <CategoryGrid />
+
+        {/* Seasonal Promotions */}
+        <SeasonalPromotion />
+
+        {/* Story Cards */}
+        <StoryCards />
+
+        {/* Featured Products */}
+        <section className="py-12 bg-stone-100">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold mb-8">Popular Right Now</h2>
+            <ProductGrid />
+          </div>
+        </section>
+
+        {/* Value Props */}
+        <ValueProps />
+
+        {/* Newsletter */}
+        <Newsletter />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="bg-[#2E4333] text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4">Shop</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    All Products
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    New Arrivals
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Best Sellers
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Deals & Outlet
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Gift Cards
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">Adventures</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Guided Trips
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Classes
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Local Events
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Expert Advice
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Trail Guides
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">Membership</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Join WeisGear
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Member Benefits
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Lifetime Warranty
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Sustainability
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Our Story
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">Help</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Shipping & Returns
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Order Status
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-amber-300 transition-colors">
+                    Size Charts
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-white/20 text-center text-sm">
+            <p>© {new Date().getFullYear()} WeisGear Outdoor Adventure Co. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
